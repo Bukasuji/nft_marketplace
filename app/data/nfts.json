@@ -1,0 +1,48 @@
+[
+    {
+      "id": 1,
+      "name": "NFT 1",
+      "imageURL": "/images/nft1.jpg",
+      "price": 0.1,
+      "time": 22.59,
+      "creator": "Creator 1",
+      "bidding": "101 people are bidding"
+    },
+    {
+      "id": 2,
+      "name": "NFT 2",
+      "imageURL": "/images/nft2.jpg",
+      "price": 0.2,
+      "time": 22.59,
+      "creator": "Creator 2",
+      "bidding": "101 people are bidding"
+    },
+    {
+      "id": 3,
+      "name": "NFT 3",
+      "imageURL": "/images/nft3.jpg",
+      "price": 0.3,
+      "time": 22.59,
+      "creator": "Creator 3",
+      "bidding": "101 people are bidding"
+    },
+    {
+        "id": 4,
+        "name": "NFT 3",
+        "imageURL": "/images/nft3.jpg",
+        "price": 0.3,
+        "time": 22.59,
+        "creator": "Creator 3",
+        "bidding": "101 people are bidding"
+    },
+    {
+        "id": 5,
+        "name": "NFT 3",
+        "imageURL": "/images/nft3.jpg",
+        "price": 0.3,
+        "time": 22.59,
+        "creator": "Creator 3",
+        "bidding": "101 people are bidding"
+      }
+  ]
+  
