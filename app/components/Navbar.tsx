@@ -14,14 +14,16 @@ export default function Navbar() {
 
   return (
     <nav className='flex justify-between px-10 py-6'>
-      <div className='py-4'>
-        <Image
-          src="/images/logo.png"
-          className='border'
-          width={150}
-          height={60}
-          alt="logo"
-        />
+      <div className='py-4 cursor-pointer'>
+        <Link href="/">
+          <Image
+            src="/images/logo.png"
+            className=''
+            width={150}
+            height={60}
+            alt="logo"
+          />
+        </Link>
       </div>
       
       {/* Navigation Links for Tablets and Desktops */}
@@ -70,7 +72,7 @@ export default function Navbar() {
             </div>
             <ul className="pl-8 pt-10">
               <li className='mb-5'>
-                <Link href="/">Auctions</Link>
+                <Link href="/available_nfts">Available Nfts</Link>
               </li>
               <li className='mb-5'>
                 <Link href="/">Roadmap</Link>
