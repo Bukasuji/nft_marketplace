@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Feautures() {
   return (
     <div>
-        <div className="flex flex-col flex-col-reverse lg:flex-row xl:mx-auto md:mx-32 mx-6 xl:max-w-6xl mt-28">
+        <div className="flex flex-col flex-col-reverse lg:flex-row lg:mx-auto md:mx-32 mx-6 xl:max-w-6xl mt-28">
             <div className="">
                 <div>
                     <p className="text-2xl lg:text-start text-center text-[#7780A1] mb-4 uppercase">Overline</p>

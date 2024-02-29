@@ -11,25 +11,25 @@ interface Props {
 
 const Popular_auction: React.FC<Props> = ({ data }) => {
     return (
-        <div className="container xl:max-w-6xl mx-auto">
+        <div className="container mx-auto xl:max-w-6xl lg:mx-auto">
             <p className='text-[#7780A1] text-center uppercase'>overline</p>
-            <h1 className="text-3xl font-bold font-sora mb-4 mt-4 text-white text-center">Most popular live auctions</h1>
-            <div className='flex justify-center  space-x-4'>
-                    <button className='bg-transparent  text-[#7780A1] text-sm  py-2 px-3 border border-[#262840] rounded-xl'>
-                       Architecture
-                    </button>
-                    <button className='bg-transparent  text-[#7780A1] text-sm  py-2 px-3 border border-[#262840] rounded-xl'>
-                      Photography
-                    </button>
-
-                    <button className='bg-transparent  text-[#7780A1] text-sm  py-2 px-3 border border-[#262840] rounded-xl'>
-                        Games
-                   </button>
-                   <button className='bg-transparent  text-[#7780A1] text-sm  py-2 px-3 border border-[#262840] rounded-xl'>
-                        Music
-                   </button>
+            <h1 className="md:text-3xl text-lg font-bold font-sora mb-4 mt-4 text-white text-center">Most popular live auctions</h1>
+            <div className='flex justify-center flex-wrap space-x-4 mb-4 lg:mb-0 mt-8'>
+                <button className='bg-transparent text-[#7780A1] text-sm py-2 px-3 border border-[#262840] rounded-xl mb-2'>
+                    Architecture
+                </button>
+                <button className='bg-transparent text-[#7780A1] text-sm py-2 px-3 border border-[#262840] rounded-xl mb-2'>
+                    Photography
+                </button>
+                <button className='bg-transparent text-[#7780A1] text-sm py-2 px-3 border border-[#262840] rounded-xl mb-2'>
+                    Games
+                </button>
+                <button className='bg-transparent text-[#7780A1] text-sm py-2 px-3 border border-[#262840] rounded-xl mb-2'>
+                    Music
+                </button>
             </div>
-            <div className="mt-10 flex">
+
+            <div className="mt-10 flex flex-col lg:flex-row">
                 {data.map((item: NFT) => (
                     <div key={item.id} className="bg-[#060714] rounded-2xl p-2">
                         <Image src={item.image} alt="nft image" width={212} height={355} className=" mb-2 rounded-md" />
