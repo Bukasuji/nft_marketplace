@@ -27,7 +27,7 @@ export default function Navbar() {
       </div>
       
       {/* Navigation Links for Tablets and Desktops */}
-      <div className='hidden md:flex text-[#7780A1] text-base font-semibold tracking-widest py-4'>
+      <div className='hidden lg:flex text-[#7780A1] text-base font-semibold tracking-widest py-4'>
           <ul className="space-x-10 flex">
             <li className=''>
               <Link href="/available_nfts">Available Nfts</Link>
@@ -44,7 +44,7 @@ export default function Navbar() {
           </ul>
       </div>
 
-      <div className='hidden md:inline space-x-3 flex-end'>
+      <div className='hidden lg:inline space-x-3 flex-end'>
         <button className='bg-transparent hover:bg-blue-500 text-[#7780A1] text-base font-semibold hover:text-white py-4 px-6 border border-[#262840] hover:border-transparent rounded-xl'>
                 Contact
         </button>
@@ -59,7 +59,7 @@ export default function Navbar() {
         <div onClick={toggleMenu}>
           <Image
             src="/images/icon-hamburger.svg"
-            className='md:hidden py-4'
+            className='lg:hidden py-4'
             width={24}
             height={21}
             alt="hamburger icon"
