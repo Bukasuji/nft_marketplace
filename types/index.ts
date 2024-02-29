@@ -1,9 +1,12 @@
 
 export interface NFT {
-    id: number;
-    name: string;
-    imageURL: string;
-    price: number;
-    creator: string;
-  }
-  
+  id: string;
+  image: string;
+  description: string;
+  timeCreated: string;
+  price: number;
+  creator: string;
+  bidding: string;
+  profile: string;
+  likes: number;
+}

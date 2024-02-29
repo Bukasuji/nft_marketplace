@@ -1,14 +1,13 @@
 import Image from "next/image";
-import Stats from "./Stats";
 
 export default function Feautures() {
   return (
     <div>
-        <div className="flex flex-col flex-col-reverse lg:flex-row xl:mx-auto md:mx-32 mx-6 xl:max-w-6xl border">
+        <div className="flex flex-col flex-col-reverse lg:flex-row xl:mx-auto md:mx-32 mx-6 xl:max-w-6xl mt-28">
             <div className="">
                 <div>
-                    <p className="text-sm lg:text-start text-center text-[#7780A1] mb-4">Overline</p>
-                    <p className="xl:text-6xl text-2xl text-center lg:text-start text-white mb-8 lg:w-[300px] xl:w-[400px] lg:text-4xl border">Sapien ipsum scelerisque convallis fusce</p>
+                    <p className="text-2xl lg:text-start text-center text-[#7780A1] mb-4 uppercase">Overline</p>
+                    <p className="xl:text-6xl text-2xl text-center lg:text-start text-white mb-8 lg:w-[300px] xl:w-[400px] lg:text-4xl">Sapien ipsum scelerisque convallis fusce</p>
                     <p className="text-sm lg:text-start text-center text-[#7780A1] mb-10 xl:w-[400px] lg:w-[300px]">Ut amet vulputate faucibus vitae semper eget auctor. Diam tempor pulvinar ultricies dolor feugiat aliquam commodo.</p>
                 </div>
                 <div className='flex justify-center lg:justify-start'>
@@ -25,7 +24,7 @@ export default function Feautures() {
             <div className='ml-auto md:w-500 md:h-500 xl:w-600 xl:h-600 '>
                 <Image
                 src="/images/bucket.png"
-                className='border'
+                className=''
                 width={500}
                 height={500}
                 alt="logo"
@@ -33,21 +32,21 @@ export default function Feautures() {
             </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row xl:mx-auto md:mx-32 mx-6 xl:max-w-6xl border">
+        <div className="flex flex-col lg:flex-row xl:mx-auto md:mx-32 mx-6 xl:max-w-6xl">
             <div className="">
                <Image
                 src="/images/Left-image.png"
-                className='border'
+                className=''
                 width={600}
                 height={600}
                 alt="logo"
                 />
             </div>
 
-            <div className="">
+            <div className="ml-auto">
                 <div>
-                    <p className="text-sm lg:text-start text-center text-[#7780A1] mb-4">Overline</p>
-                    <p className="xl:text-6xl text-2xl text-center lg:text-start text-white mb-8 lg:w-[300px] xl:w-[400px] lg:text-4xl border">Habitant tristique aliquam in vel scelerisque</p>
+                    <p className="text-2xl lg:text-start text-center text-[#7780A1] mb-4 uppercase">Overline</p>
+                    <p className="xl:text-6xl text-2xl text-center lg:text-start text-white mb-8 lg:w-[300px] xl:w-[400px] lg:text-4xl">Sapien ipsum scelerisque convallis fusce</p>
                     <p className="text-sm lg:text-start text-center text-[#7780A1] mb-10 xl:w-[400px] lg:w-[300px]">Ut amet vulputate faucibus vitae semper eget auctor. Diam tempor pulvinar ultricies dolor feugiat aliquam commodo.</p>
                     <div className="flex">
                         <div>
@@ -74,7 +73,6 @@ export default function Feautures() {
                 </div>
             </div>
         </div>
-        <Stats/>
     </div>
   );
 }

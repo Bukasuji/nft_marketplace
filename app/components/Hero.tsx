@@ -7,7 +7,7 @@ export default function Hero() {
         <Navbar/>
         <div className="">
            {/*<Image src="/images/Squares.png" width={1851} height={608} alt="icon" />*/}
-            <div className=" ">
+            <div className="bg-cover bg-[url('/images/Squares.png')] ">
                <p className="md:text-base text-xs text-center uppercase text-[#7780A1] md:mb-8 mb-4">Non fungible token</p>
                 <div className="">
                   <div className="flex justify-center">

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 
+
 export default function Navbar() {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
@@ -12,7 +13,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className='flex justify-between px-10 border py-6'>
+    <nav className='flex justify-between px-10 py-6'>
       <div className='py-4'>
         <Image
           src="/images/logo.png"
@@ -27,7 +28,7 @@ export default function Navbar() {
       <div className='hidden md:flex text-[#7780A1] text-base font-semibold tracking-widest py-4'>
           <ul className="space-x-10 flex">
             <li className=''>
-              <Link href="/">Auctions</Link>
+              <Link href="/available_nfts">Available Nfts</Link>
             </li>
             <li className=''>
               <Link href="/">Roadmap</Link>

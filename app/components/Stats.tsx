@@ -27,10 +27,10 @@ export default function Stats() {
                 </div>
             </div>
             
-            <div className="bg-gradient-to-b from-navy-800 via-navy-800 to-opacity-10 rounded-2xl flex flex-col flex-col-reverse lg:flex-row xl:mx-auto md:mx-32 mx-6 xl:max-w-6xl ">
+            <div className="bg-gradient-to-b from-navy-800 via-navy-800 to-opacity-10 rounded-2xl flex flex-col flex-col-reverse lg:flex-row xl:mx-auto md:mx-32 mx-6 xl:max-w-6xl my-16 ">
                <div className="">
                     <div>
-                        <p className="text-sm lg:text-start text-center text-[#7780A1] mb-4">Overline</p>
+                        <p className="text-lg uppercase lg:text-start text-center text-[#7780A1] mb-4">Overline</p>
                         <p className="xl:text-6xl text-2xl text-center lg:text-start text-white mb-8 lg:w-[300px] xl:w-[400px] lg:text-4xl">Sapien ipsum scelerisque convallis fusce</p>
                         <p className="text-sm lg:text-start text-center text-[#7780A1] mb-10 xl:w-[400px] lg:w-[300px]">Ut amet vulputate faucibus vitae semper eget auctor. Diam tempor pulvinar ultricies dolor feugiat aliquam commodo.</p>
                     </div>

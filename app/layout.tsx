@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
 import "./globals.css";
-import Provider from '@reduxjs/toolkit'
+import StoreProvider from './StoreProvider';
+
 
 const inter = Inter({ subsets: ["latin"],
   variable:'--font-inter'
@@ -25,12 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} ${sora.variable}`}>
-        <Provider>
-          <div>
-             {children}
-          </div>
-        </Provider>
+          <StoreProvider>{children}</StoreProvider>
       </body>
     </html>
   );
 }
+
+

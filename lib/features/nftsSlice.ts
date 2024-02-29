@@ -1,48 +1,55 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AppThunk, RootState } from '../../store';
-import { NFT } from '../../../types';
+// nftSlice.ts
+import { createSlice, PayloadAction, createSelector } from '@reduxjs/toolkit';
+import nftsData from '../../app/data/nfts.json';
+import { RootState } from '../store'; 
+import { ThunkAction } from 'redux-thunk';
+
+interface NFT {
+  id: string;
+  image: string;
+  description: string;
+  timeCreated: string;
+  price: number;
+  creator: string;
+  bidding: string;
+  profile: string;
+  likes: number;
+}
 
 interface NFTState {
   nfts: NFT[];
-  status: 'idle' | 'loading' | 'failed';
 }
 
 const initialState: NFTState = {
   nfts: [],
-  status: 'idle',
 };
 
-const nftsSlice = createSlice({
+const nftSlice = createSlice({
   name: 'nfts',
   initialState,
   reducers: {
-    fetchNFTsStart: state => {
-      state.status = 'loading';
-    },
-    fetchNFTsSuccess: (state, action: PayloadAction<NFT[]>) => {
-      state.status = 'idle';
+    setNFTs(state, action: PayloadAction<NFT[]>) {
       state.nfts = action.payload;
-    },
-    fetchNFTsFailure: state => {
-      state.status = 'failed';
     },
   },
 });
 
-export const { fetchNFTsStart, fetchNFTsSuccess, fetchNFTsFailure } = nftsSlice.actions;
+export const { setNFTs } = nftSlice.actions;
 
-export const fetchNFTs = (): AppThunk<void> => async dispatch => {
-  dispatch(fetchNFTsStart());
+// Thunk action to fetch NFT data from JSON file
+export const fetchNFTs = (): ThunkAction<void, RootState, null, PayloadAction<NFT[]>> => async (dispatch) => {
   try {
-    const response = await fetch('/data/nfts.json');
-    const data = await response.json();
-    dispatch(fetchNFTsSuccess(data));
+    // Simulate fetching data (replace with actual fetch code)
+    // Assuming nftsData is an array of NFT objects from the JSON file
+    dispatch(setNFTs(nftsData));
   } catch (error) {
-    dispatch(fetchNFTsFailure());
+    console.error('Error fetching NFTs:', error);
+    // Handle error here (e.g., dispatch an error action)
   }
 };
 
+// Selector to retrieve NFTs from the Redux store
 export const selectNFTs = (state: RootState) => state.nfts.nfts;
-export const selectNFTsStatus = (state: RootState) => state.nfts.status;
 
-export default nftsSlice.reducer;
+// Export the reducer
+export default nftSlice.reducer;
