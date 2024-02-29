@@ -5,7 +5,7 @@ import { RootState } from '../store';
 import { ThunkAction } from 'redux-thunk';
 
 interface NFT {
-  id: string;
+  id: number;
   image: string;
   description: string;
   timeCreated: string;

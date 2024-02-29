@@ -1,20 +1,42 @@
 "use client"
 import React, { useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchNFTs, selectNFTs } from '../../lib/features/nftsSlice'
 import { AppDispatch } from '../../lib/store';
 import { BiRightArrow } from 'react-icons/bi';
 import { FaHeart } from 'react-icons/fa';
+import { NFT } from '../../types';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { useRouter } from 'next/navigation';
 
-const AvailableNfts = () => {
+
+
+
+interface AvailableNftsProps {
+  nft: NFT;
+}
+
+const AvailableNfts:React.FC<AvailableNftsProps> = ({ nft }) => {
   const dispatch: AppDispatch = useDispatch();
   const nfts = useSelector(selectNFTs);
 
   useEffect(() => {
     dispatch(fetchNFTs());
   }, [dispatch]);
+
+  const router = useRouter();
+
+  const handleNFTClick = () => {
+  if (nft.id) {
+    router.push(`/nft/${nft.id}`);
+  } else {
+    console.error("NFT ID is undefined or null.");
+  }
+};
+
 
   return (
     <div className='flex min-h-screen flex-col bg-cover bg-[#060714] pt-0'>
@@ -23,7 +45,7 @@ const AvailableNfts = () => {
         <h1 className="text-3xl font-bold font-sora mb-4 mt-32 text-white text-center">Available NFTs</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {nfts.map((nft) => (
-            <div key={nft.id} className="bg-[#060714] border border-slate-900 rounded-2xl p-4">
+            <Link href={`/${nft.id}`} key={nft.id} className="bg-[#060714] border border-slate-900 rounded-2xl p-4">
                 <img src={nft.image} alt="nft image" className="mb-2 rounded-md" />
                 <div className='flex mb-6 mt-4'>
                 <h2 className="text-sm font-normal w-[60%] font-sora text-white">{nft.description}</h2>
@@ -46,7 +68,7 @@ const AvailableNfts = () => {
                     <p className='ml-2 text-sm text-[#7780A1]'>{nft.likes}</p>
                 </div>
                 </div>
-            </div>
+            </Link>
             ))}
         </div>
         </div>

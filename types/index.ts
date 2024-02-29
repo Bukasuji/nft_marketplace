@@ -1,6 +1,6 @@
 
 export interface NFT {
-  id: string;
+  id: number;
   image: string;
   description: string;
   timeCreated: string;

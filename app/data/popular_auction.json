@@ -3,7 +3,7 @@
 [
     
     {
-        "id": "1",
+        "id": 1,
         "description": "Tristique diam a, enim, eros tellus. Viverra etiam",
         "image": "/images/nfts/banana.png",                                          
         "price": 0.1,
@@ -14,7 +14,7 @@
         "likes": 10
       },
       {
-        "id": "2",
+        "id": 2,
         "description": "Tristique diam a, enim, eros tellus. Viverra etiam",
         "image": "/images/nfts/eggart.png",
         "price": 0.2,
@@ -26,7 +26,7 @@
   
       },
       {
-        "id": "3",
+        "id": 3,
         "description": "Tristique diam a, enim, eros tellus. Viverra etiam",
         "image": "/images/nfts/watercolor.png",
         "price": 0.3,
@@ -37,7 +37,7 @@
         "likes": 10
       },
       {
-          "id": "4",
+          "id": 4,
           "description": "Tristique diam a, enim, eros tellus. Viverra etiam",
           "image": "/images/nfts/eggart.png",
           "price": 0.3,
@@ -48,7 +48,7 @@
           "likes": 10
       },
       {
-          "id": "5",
+          "id": 5,
           "description": "Tristique diam a, enim, eros tellus. Viverra etiam",
           "image": "/images/nfts/sword.png",
           "price": 0.3,
@@ -60,7 +60,7 @@
         },
 
         {
-            "id": "6",
+            "id": 6,
             "description": "Tristique diam a, enim, eros tellus. Viverra etiam",
             "image": "/images/nfts/eggart.png",
             "price": 0.3,
