@@ -29,28 +29,52 @@ const NFTDetailsPage: React.FC = () => {
     <div className='flex min-h-screen flex-col bg-cover bg-[#060714] pt-0'>
       <Navbar/>
       <div className="container p-0 relative">
-        <h1 className="text-3xl font-bold font-sora mb-4 mt-32 text-white text-center">NFT Details</h1>
+        <h1 className="text-3xl font-bold font-sora mb-4 mt-16 text-white text-center">NFT Details</h1>
         {/* Display NFT details */}
-        <div className="bg-[#060714] border border-slate-900 rounded-2xl p-4">
+        <div className="bg-[#060714] rounded-2xl p-4 flex lg:flex-row flex-col justify-center mx-auto">
           <img src={selectedNFT.image} alt="nft image" className="mb-2 rounded-md" />
-          <h2 className="text-sm font-normal w-[60%] font-sora text-white">{selectedNFT.description}</h2>
-          <div className="flex items-center justify-center bg-[#514CFF26] text-[#514CFF] text-sm mb-1 w-[62px] h-[30px] rounded ml-auto">
-            <p className='text-sm'>{selectedNFT.price} ETH</p>
-          </div>
-          <div className='flex mb-6'>
-            <img src="/images/nfts/Timer.png" alt="time icon" width={20} height={20} className="" />
-            <p className="ml-4 text-white text-sm font-sora">{selectedNFT.timeCreated} min left</p>
-          </div>
-          <div className='border border-slate-900'/>
-          <div className='flex mt-4'>
-            <img src={selectedNFT.profile} alt="profiles" width={150} height={32} className="" />
-            <p className='text-sm text-[#7780A1]'>{selectedNFT.bidding}</p>
-            <div className='flex ml-auto'>
-              <div className="text-red-500">
-                <FaHeart />
+          <div>
+              <div className="lg:ml-6 mx-0">
+                  <h2 className="text-2xl font-semibold font-sora text-white ">{selectedNFT.name}</h2>
               </div>
-              <p className='ml-2 text-sm text-[#7780A1]'>{selectedNFT.likes}</p>
-            </div>
+              <div className="mx-center lg:ml-6 mx-0 mt-2">
+                  <h2 className="text-sm font-normal font-sora text-[#7780A1]">{selectedNFT.description}</h2>
+              </div>
+
+              <div className="flex flex-col md:flex-row">
+                  <div className="flex">
+                     <img src={selectedNFT.creatorImage} alt="nft image" className="mb-2 rounded-md" />
+                     <div className="text-white mt-2">
+                        <p className="text-[#7780A1]">creator</p>
+                        @{selectedNFT.creator}
+                     </div>
+                  </div>
+
+                  <div className="flex">
+                     <img src={selectedNFT.collectionImage} alt="nft image" className="mb-2 rounded-md" />
+                     <div className="text-white mt-4">
+                        <p className="text-[#7780A1]">collection</p>
+                        {selectedNFT.collection}
+                     </div>
+                  </div>  
+              </div>
+              <div className="bg-[#262840] rounded-2xl p-6 lg:ml-6 mx-4">
+                  <div className="flex">
+                      <div className="text-white font-bold text-lg">
+                        <p className="text-[#7780A1] text-normal font-normal">Current price</p>
+                        {selectedNFT.price} ETH
+                      </div>
+                      <div className="text-white font-bold text-lg mt-1 ml-auto">
+                        <p className="text-[#7780A1] font-normal text-sm">Time left</p>
+                        {selectedNFT.timeCreated} min
+                        <p className="text-[#7780A1] font-normal text-sm"> (01.01.2022 - 01:40:47)</p>
+                      </div>
+                  </div>
+                  <button className="bg-blue-800 text-white text-sm font-semibold py-4 w-full mt-6 rounded-2xl">place bid </button>
+              </div>
+              <div className='mt-6 ml-6'>
+                <img src="/images/nfts/graph.png" alt="profiles" width={300} height={200} className="" />
+              </div>
           </div>
         </div>
       </div>

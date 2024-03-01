@@ -11,7 +11,11 @@
       "creator": "Creator 1",
       "bidding": "35 people are bidding",
       "profile":  "/images/nfts/Avatars2.png",
-      "likes": 10
+      "likes": 10,
+      "creatorImage": "/images/nfts/creator.png",
+      "collectionImage": "/images/nfts/collection.png",
+      "name": "NFT 1",
+      "collection":"kings"
     },
     {
       "id": 2,
@@ -22,7 +26,11 @@
       "creator": "Creator 2",
       "bidding": "20 people are bidding",
       "profile":  "/images/nfts/Avatars2.png",
-      "likes": 10
+      "likes": 10,
+      "creatorImage": "/images/nfts/creator.png",
+      "collectionImage": "/images/nfts/collection.png",
+      "name": "NFT 2",
+      "collection":"Soft"
 
     },
     {
@@ -34,7 +42,11 @@
       "creator": "Creator 3",
       "bidding": "45 people are bidding",
       "profile":  "/images/nfts/Avatars2.png",
-      "likes": 10
+      "likes": 10,
+      "creatorImage": "/images/nfts/creator.png",
+      "collectionImage": "/images/nfts/collection.png",
+      "name": "NFT 3",
+      "collection":"White"
     },
     {
         "id": 4,
@@ -45,7 +57,11 @@
         "creator": "Creator 3",
         "bidding": "35 people are bidding",
         "profile": "/images/nfts/Avatars2.png",
-        "likes": 10
+        "likes": 10,
+        "creatorImage": "/images/nfts/creator.png",
+        "collectionImage": "/images/nfts/collection.png",
+        "name": "NFT 4",
+        "collection":"Tiger"
     },
     {
         "id": 5,
@@ -56,7 +72,11 @@
         "creator": "Creator 3",
         "bidding": "10 people are bidding",
         "profile":  "/images/nfts/Avatars2.png",
-        "likes": 10
+        "likes": 10,
+        "creatorImage": "/images/nfts/creator.png",
+        "collectionImage": "/images/nfts/collection.png",
+        "name": "NFT 5",
+        "collection":"Lion"
       }
   ]
   

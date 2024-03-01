@@ -9,4 +9,8 @@ export interface NFT {
   bidding: string;
   profile: string;
   likes: number;
+  creatorImage: string;
+  collectionImage:string,
+  name: string,
+  collection:string
 }
