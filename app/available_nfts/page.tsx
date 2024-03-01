@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect } from 'react';
 import Image from 'next/image';
+import { NextPage } from 'next';
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchNFTs, selectNFTs } from '../../lib/features/nftsSlice'
@@ -14,28 +15,13 @@ import { useRouter } from 'next/navigation';
 
 
 
-
-interface AvailableNftsProps {
-  nft: NFT;
-}
-
-const AvailableNfts:React.FC<AvailableNftsProps> = ({ nft }) => {
+const AvailableNfts:React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
   const nfts = useSelector(selectNFTs);
 
   useEffect(() => {
     dispatch(fetchNFTs());
   }, [dispatch]);
-
-  const router = useRouter();
-
-  const handleNFTClick = () => {
-  if (nft.id) {
-    router.push(`/nft/${nft.id}`);
-  } else {
-    console.error("NFT ID is undefined or null.");
-  }
-};
 
 
   return (
@@ -77,4 +63,5 @@ const AvailableNfts:React.FC<AvailableNftsProps> = ({ nft }) => {
   );
 };
 
-export default AvailableNfts;
+export default AvailableNfts
+

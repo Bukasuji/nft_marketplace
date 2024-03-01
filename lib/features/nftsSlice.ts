@@ -1,8 +1,6 @@
-// nftSlice.ts
-import { createSlice, PayloadAction, createSelector } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import nftsData from '../../app/data/nfts.json';
-import { RootState } from '../store'; 
-import { ThunkAction } from 'redux-thunk';
+import { RootState } from '../store';
 
 interface NFT {
   id: number;
@@ -15,45 +13,54 @@ interface NFT {
   profile: string;
   likes: number;
   creatorImage: string;
-  collectionImage:string,
-  name: string,
-  collection:string
+  collectionImage: string;
+  name: string;
+  collection: string;
 }
 
 interface NFTState {
   nfts: NFT[];
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  error: string | null;
 }
 
 const initialState: NFTState = {
   nfts: [],
+  status: 'idle',
+  error: null,
 };
+
+// Define an async thunk to fetch NFT data
+export const fetchNFTs = createAsyncThunk('nfts/fetchNFTs', async () => {
+  try {
+    return nftsData;
+  } catch (error) {
+    throw new Error('Error fetching NFTs: ' );
+  }
+});
 
 const nftSlice = createSlice({
   name: 'nfts',
   initialState,
   reducers: {
-    setNFTs(state, action: PayloadAction<NFT[]>) {
-      state.nfts = action.payload;
-    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchNFTs.pending, (state) => {
+        state.status = 'loading';
+        state.error = null; 
+      })
+      .addCase(fetchNFTs.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.nfts = action.payload;
+      })
+      .addCase(fetchNFTs.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message || 'Error fetching NFTs';
+      });
   },
 });
 
-export const { setNFTs } = nftSlice.actions;
-
-// Thunk action to fetch NFT data from JSON file
-export const fetchNFTs = (): ThunkAction<void, RootState, null, PayloadAction<NFT[]>> => async (dispatch) => {
-  try {
-    // Simulate fetching data (replace with actual fetch code)
-    // Assuming nftsData is an array of NFT objects from the JSON file
-    dispatch(setNFTs(nftsData));
-  } catch (error) {
-    console.error('Error fetching NFTs:', error);
-    // Handle error here (e.g., dispatch an error action)
-  }
-};
-
-// Selector to retrieve NFTs from the Redux store
 export const selectNFTs = (state: RootState) => state.nfts.nfts;
 
-// Export the reducer
 export default nftSlice.reducer;
